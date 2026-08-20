@@ -1,0 +1,395 @@
+# Menus do AlkaBackpack - todos os icones, slots, textos e acoes.
+# Placeholders trocados antes do parse: {capacidade}, {atual}, {moeda}, {preco},
+# {nivel}, {usados}, {total}, {paginas}, {xp}, {status}, {slots}.
+#
+# Padrao visual (ver docs/MestreDEV-STYLE-GUIDE.md):
+# - Titulos em gradiente + bold, cor por categoria (verde=funcoes da mochila,
+#   roxo=progressao/upgrade, dourado=loja/skins).
+# - Lore em camadas: divisor -> dado -> espaco -> acao amarela -> divisor.
+# - "glow: true" so em botoes de estado ligado ou de acao monetaria principal.
+
+# ===================== MENU DE LIQUIDOS =====================
+liquids:
+  title: "<gradient:#55FFAA:#00AA55><bold>Líquidos da Mochila</bold></gradient>"
+  size: 3
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  items:
+    back:
+      slot: 0
+      material: ARROW
+      action: back
+      name: "<gray><bold>← Voltar</bold>"
+      lore:
+        - "<dark_gray>Volta para o menu Gerenciar."
+    info:
+      slot: 4
+      material: BUCKET
+      name: "<aqua><bold>Informações</bold></aqua>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Capacidade por tanque:"
+        - "<white>{capacidade} <gray>baldes"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    water:
+      slot: 11
+      liquid: WATER
+      material: BLUE_STAINED_GLASS
+      name: "<blue><bold>Tanque de Água</bold></blue>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Atual: <white>{atual}<gray>/<white>{capacidade}"
+        - ""
+        - "<green>➤ <gray>Clique: depositar"
+        - "<red>➤ <gray>Botão direito: retirar"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    lava:
+      slot: 12
+      liquid: LAVA
+      material: ORANGE_STAINED_GLASS
+      name: "<gold><bold>Tanque de Lava</bold></gold>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Atual: <white>{atual}<gray>/<white>{capacidade}"
+        - ""
+        - "<green>➤ <gray>Clique: depositar"
+        - "<red>➤ <gray>Botão direito: retirar"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    milk:
+      slot: 13
+      liquid: MILK
+      material: WHITE_STAINED_GLASS
+      name: "<white><bold>Tanque de Leite</bold></white>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Atual: <white>{atual}<gray>/<white>{capacidade}"
+        - ""
+        - "<green>➤ <gray>Clique: depositar"
+        - "<red>➤ <gray>Botão direito: retirar"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    snow:
+      slot: 14
+      liquid: SNOW
+      material: LIGHT_BLUE_STAINED_GLASS
+      name: "<aqua><bold>Tanque de Neve</bold></aqua>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Atual: <white>{atual}<gray>/<white>{capacidade}"
+        - ""
+        - "<green>➤ <gray>Clique: depositar"
+        - "<red>➤ <gray>Botão direito: retirar"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    honey:
+      slot: 15
+      liquid: HONEY
+      material: YELLOW_STAINED_GLASS
+      name: "<yellow><bold>Tanque de Mel</bold></yellow>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Atual: <white>{atual}<gray>/<white>{capacidade}"
+        - ""
+        - "<green>➤ <gray>Clique: depositar"
+        - "<red>➤ <gray>Botão direito: retirar"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+
+# ===================== MENU DE XP =====================
+xp:
+  title: "<gradient:#55FFAA:#00AA55><bold>Experiência da Mochila</bold></gradient>"
+  size: 3
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  items:
+    back:
+      slot: 0
+      material: ARROW
+      action: back
+      name: "<gray><bold>← Voltar</bold>"
+      lore:
+        - "<dark_gray>Volta para o menu Gerenciar."
+    info:
+      slot: 4
+      material: EXPERIENCE_BOTTLE
+      name: "<green><bold>Informações</bold></green>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>XP guardado: <yellow>{xp} <gray>níveis"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    deposit-1:
+      slot: 11
+      material: LIME_DYE
+      action: xp:deposit:1
+      name: "<green><bold>Depositar 1 Nível</bold></green>"
+      lore:
+        - "<gray>Guarda 1 nível de XP seu"
+        - "<gray>dentro da mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para depositar"
+    deposit-10:
+      slot: 13
+      material: LIME_DYE
+      action: xp:deposit:10
+      name: "<green><bold>Depositar 10 Níveis</bold></green>"
+      lore:
+        - "<gray>Guarda 10 níveis de XP seu"
+        - "<gray>dentro da mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para depositar"
+    deposit-all:
+      slot: 15
+      material: EMERALD
+      action: xp:deposit:all
+      glow: true
+      name: "<gradient:#55FF55:#00FF00><bold>Depositar TUDO</bold></gradient>"
+      lore:
+        - "<gray>Guarda todo o seu XP atual"
+        - "<gray>dentro da mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para depositar"
+    withdraw-1:
+      slot: 20
+      material: RED_DYE
+      action: xp:withdraw:1
+      name: "<red><bold>Retirar 1 Nível</bold></red>"
+      lore:
+        - "<gray>Retira 1 nível de XP"
+        - "<gray>guardado na mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para retirar"
+    withdraw-10:
+      slot: 22
+      material: RED_DYE
+      action: xp:withdraw:10
+      name: "<red><bold>Retirar 10 Níveis</bold></red>"
+      lore:
+        - "<gray>Retira 10 níveis de XP"
+        - "<gray>guardados na mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para retirar"
+    withdraw-all:
+      slot: 24
+      material: REDSTONE
+      action: xp:withdraw:all
+      glow: true
+      name: "<gradient:#FF5555:#AA0000><bold>Retirar TUDO</bold></gradient>"
+      lore:
+        - "<gray>Retira todo o XP guardado"
+        - "<gray>na mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para retirar"
+
+# ===================== MENU GERENCIAR =====================
+manage:
+  title: "<gradient:#55FFAA:#00AA55><bold>Gerenciar Mochila</bold></gradient>"
+  size: 3
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  items:
+    sort:
+      slot: 11
+      material: HOPPER
+      action: sort
+      name: "<yellow><bold>Organizar</bold></yellow>"
+      lore:
+        - "<gray>Empilha e ordena os itens"
+        - "<gray>desta página."
+        - ""
+        - "<yellow>➤ <gray>Clique para organizar"
+    mining:
+      slot: 12
+      material: IRON_PICKAXE
+      action: mining
+      name: "<green><bold>Minerar para o Estoque</bold></green>"
+      lore:
+        - "<gray>Envia blocos minerados direto"
+        - "<gray>para a mochila."
+        - ""
+        - "<gray>Status: {status}"
+        - ""
+        - "<yellow>➤ <gray>Clique para alternar"
+    auto:
+      slot: 13
+      material: PISTON
+      action: auto
+      name: "<aqua><bold>Coleta Automática</bold></aqua>"
+      lore:
+        - "<gray>Recebe itens iguais aos que já"
+        - "<gray>estão na mochila automaticamente."
+        - ""
+        - "<gray>Status: {status}"
+        - ""
+        - "<yellow>➤ <gray>Clique para alternar"
+    convert:
+      slot: 15
+      material: IRON_BLOCK
+      action: convert
+      name: "<green><bold>Converter Lingotes em Blocos</bold></green>"
+      lore:
+        - "<gray>Transforma cada 9 lingotes"
+        - "<gray>em 1 bloco nesta página."
+        - ""
+        - "<yellow>➤ <gray>Clique para converter"
+    liquids:
+      slot: 19
+      material: BUCKET
+      action: liquids
+      name: "<aqua><bold>Líquidos</bold></aqua>"
+      lore:
+        - "<gray>Tanques de água, lava, leite,"
+        - "<gray>neve e mel da mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para abrir"
+    xp:
+      slot: 20
+      material: EXPERIENCE_BOTTLE
+      action: xp
+      name: "<green><bold>Experiência</bold></green>"
+      lore:
+        - "<gray>Guarde ou retire níveis de"
+        - "<gray>XP direto da mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para abrir"
+    skins:
+      slot: 21
+      material: PLAYER_HEAD
+      action: skins
+      glow: true
+      name: "<gradient:#FFAA00:#FFE055><bold>Loja de Skins</bold></gradient>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Compre novos visuais"
+        - "<gray>para a sua mochila."
+        - ""
+        - "<yellow>➤ <gray>Clique para abrir a loja"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    back:
+      slot: 22
+      material: ARROW
+      action: back
+      name: "<gray><bold>← Voltar</bold>"
+      lore:
+        - "<dark_gray>Volta para a mochila."
+
+# ===================== MENU UPGRADES =====================
+upgrade:
+  title: "<gradient:#AA55FF:#5500AA><bold>Upgrades da Mochila</bold></gradient>"
+  size: 3
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  items:
+    info:
+      slot: 11
+      material: BOOK
+      name: "<light_purple><bold>Páginas da Mochila</bold></light_purple>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Atuais: <white>{paginas}"
+        - "<gray>Máximas: <white>{max_paginas}"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    buy:
+      slot: 13
+      material: EMERALD
+      action: buy
+      glow: true
+      name: "<gradient:#FFD700:#FFA500><bold>💰 Comprar Página</bold></gradient>"
+      lore:
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+        - "<gray>Preço: <gold>{preco} <white>{moeda}"
+        - ""
+        - "<yellow>➤ <gray>Clique para comprar"
+        - "<dark_gray><st>―――――――――――――――――――</st>"
+    back:
+      slot: 22
+      material: ARROW
+      action: back
+      name: "<gray><bold>← Voltar</bold>"
+      lore:
+        - "<dark_gray>Volta para a mochila."
+
+# ===================== LOJA DE SKINS =====================
+skins:
+  title: "<gradient:#FFAA00:#FFE055><bold>Loja de Skins</bold></gradient>"
+  size: 6
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  # slots onde os skins aparecem (pagina)
+  skin-slots: [10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43]
+  # lore de cada item de skin na loja
+  item-lore:
+    - "<dark_gray><st>―――――――――――――――――――</st>"
+    - "<gray>Preço: <gold>{preco} <white>{moeda}"
+    - ""
+    - "<yellow>➤ <gray>Clique para comprar!"
+    - "<dark_gray><st>―――――――――――――――――――</st>"
+  items:
+    prev:
+      slot: 48
+      material: ARROW
+      action: prev
+      name: "<yellow><bold>← Anterior</bold></yellow>"
+    back:
+      slot: 49
+      material: ARROW
+      action: back
+      name: "<gray><bold>← Voltar</bold>"
+      lore:
+        - "<dark_gray>Volta para o menu Gerenciar."
+    next:
+      slot: 50
+      material: ARROW
+      action: next
+      name: "<yellow><bold>Próxima →</bold></yellow>"
+
+# ===================== SELETOR DE MOCHILAS =====================
+selector:
+  title: "<gradient:#55FFAA:#00AA55><bold>Suas Mochilas</bold></gradient>"
+  size: 3
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+  # slots para os tiers
+  tier-slots: [10,11,12,13,14,15,16,19,20,21,22,23,24,25]
+  # lore de cada tier desbloqueado (placeholders {slots}, {capacidade}, {paginas})
+  item-lore:
+    - "<dark_gray><st>―――――――――――――――――――</st>"
+    - "<gray>Slots: <white>{slots}<gray>/<white>{capacidade}"
+    - "<gray>Páginas iniciais: <white>{paginas}"
+    - ""
+    - "<yellow>➤ <gray>Clique para abrir"
+    - "<dark_gray><st>―――――――――――――――――――</st>"
+  empty-name: "<red>Nenhuma mochila desbloqueada"
+
+# ===================== BARRA DE CONTROLE DA MOCHILA =====================
+control:
+  prev:
+    material: ARROW
+    name: "<gray><bold>← Página Anterior</bold>"
+    lore:
+      - "<dark_gray>Vai para a página anterior."
+  manage:
+    material: HOPPER
+    name: "<yellow><bold>Gerenciar</bold></yellow>"
+    lore:
+      - "<dark_gray>Organizar, minerar, converter,"
+      - "<dark_gray>líquidos, XP e skins."
+  upgrade:
+    material: EXPERIENCE_BOTTLE
+    name: "<light_purple><bold>Upgrades</bold></light_purple>"
+    lore:
+      - "<dark_gray>Compre novas páginas"
+      - "<dark_gray>para a mochila."
+  password:
+    material: BOOK
+    name: "<aqua><bold>Senha</bold></aqua>"
+    lore:
+      - "<dark_gray>Proteja esta mochila"
+      - "<dark_gray>com uma senha no chat."
+  next:
+    material: ARROW
+    name: "<white><bold>Próxima Página →</bold>"
+    lore:
+      - "<dark_gray>Vai para a próxima página."

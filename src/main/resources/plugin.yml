@@ -1,0 +1,55 @@
+name: AlkaBackpack
+version: '${version}'
+main: com.alkacode.backpack.AlkaBackpackPlugin
+api-version: '1.21'
+author: MestreDEV
+description: Sistema de mochilas (fisicas e virtuais) com tiers, paginas e upgrade via AlkaEconomy. Sobre o AlkaCore (banco/HikariCP, BaseGui).
+depend: [AlkaCore, AlkaEconomy]
+softdepend: [LuckPerms, PlaceholderAPI, AlkaVips, ItemsAdder, CosmeticsCore]
+
+commands:
+  abackpack:
+    description: Comando principal das mochilas AlkaBackpack.
+    aliases: [ab, alkabackpack]
+    usage: /<command> [auto|cosmetico|give|giveall|list|info|reload|reset|wipe|open|edit]
+  aabackpack:
+    description: Comandos administrativos das mochilas.
+    aliases: [aab, alkaaabackpack]
+    permission: alkabackpack.admin
+    usage: /<command> [give|giveall|reload|reset|wipe|open|edit]
+  abrirmochila:
+    description: Abre sua mochila fisica (a de maior tier, ou a de um tier especifico), esteja ela em qualquer slot do inventario.
+    permission: alkabackpack.use
+    usage: /<command> [tier]
+
+permissions:
+  alkabackpack.admin:
+    description: Permissao administrativa completa do AlkaBackpack.
+    default: op
+  alkabackpack.use:
+    description: Permite abrir mochilas.
+    default: true
+  alkabackpack.auto:
+    description: Permite alternar a coleta automatica.
+    default: true
+  alkabackpack.give:
+    description: Permite dar mochilas.
+    default: op
+  alkabackpack.giveall:
+    description: Permite dar mochilas a todos online.
+    default: op
+  alkabackpack.reload:
+    description: Permite recarregar a configuracao.
+    default: op
+  alkabackpack.reset:
+    description: Permite limpar mochilas de um jogador.
+    default: op
+  alkabackpack.wipe:
+    description: Permite limpar mochilas de todos.
+    default: op
+  alkabackpack.open:
+    description: Permite abrir a mochila virtual de qualquer jogador.
+    default: op
+  alkabackpack.edit:
+    description: Permite editar qualquer mochila (inclusive offline/fisica).
+    default: op

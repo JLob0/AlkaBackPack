@@ -1,0 +1,343 @@
+﻿# Loja de Skins do AlkaBackpack
+# Cada skin: nome (MiniMessage), textura (base64) OU itemsadder-id, preco (moeda de
+# economias.yml), permissao e o icone do item na loja.
+
+settings:
+  skin-token:
+    material: PAPER
+    glow: true
+    name: "<gradient:#FFAA00:#FFE055><bold>âœ¦ Skin: {nome} âœ¦</bold></gradient>"
+    lore:
+      - "<dark_gray><st>â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•</st>"
+      - "<gray>Aplique este visual na sua mochila."
+      - ""
+      - "<yellow>âž¤ <gray>Segure a mochila numa mao e"
+      - "<yellow>âž¤ <gray>o token na outra, depois"
+      - "<yellow>âž¤ <gray>clique com o botÃ£o direito."
+      - "<dark_gray><st>â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•</st>"
+
+skins:
+  default:
+    name: "<gold>Mochila Padrao"
+    texture: ""
+    price: 0.0
+    permission: "alkabackpack.skin.default"
+    item: PLAYER_HEAD
+  ender:
+    name: "<dark_purple>Mochila do Fim"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E2YmY5MTZlMmYyNDZiZDlmODU4OTFmNDc5YzY5ZjkyNTI2OWUyODUyYjM5M2Y4ZjRjNjliNWY2In19fQ=="
+    price: 5000.0
+    permission: "alkabackpack.skin.ender"
+    item: ENDER_EYE
+  magma:
+    name: "<red>Mochila de Magma"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzhmZDk0MjYyYTY5ZDQxNjM4Mjc0M2E1ZDM4YTk2NWU2YzZkY2FjYjQ3NmQ4YjQ3MmRjNzM1M2I5NzcifX19"
+    price: 10000.0
+    permission: "alkabackpack.skin.magma"
+    item: MAGMA_CREAM
+
+  # ---- Traveler's Backpack: skins portadas (mob/bloco), preco em alkarion ----
+  backpack_bat:
+    name: "<dark_gray>Mochila Morcego"
+    itemsadder-id: "travelersbackpack:backpack_bat"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_bat"
+    item: BAT_SPAWN_EGG
+  backpack_bee:
+    name: "<yellow>Mochila Abelha"
+    itemsadder-id: "travelersbackpack:backpack_bee"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_bee"
+    item: HONEYCOMB
+  backpack_blaze:
+    name: "<gold>Mochila Blaze"
+    itemsadder-id: "travelersbackpack:backpack_blaze"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_blaze"
+    item: BLAZE_ROD
+  backpack_bookshelf:
+    name: "<gold>Mochila Estante"
+    itemsadder-id: "travelersbackpack:backpack_bookshelf"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_bookshelf"
+    item: BOOKSHELF
+  backpack_cactus:
+    name: "<green>Mochila Cacto"
+    itemsadder-id: "travelersbackpack:backpack_cactus"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_cactus"
+    item: CACTUS
+  backpack_cake:
+    name: "<light_purple>Mochila Bolo"
+    itemsadder-id: "travelersbackpack:backpack_cake"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_cake"
+    item: CAKE
+  backpack_chicken:
+    name: "<white>Mochila Galinha"
+    itemsadder-id: "travelersbackpack:backpack_chicken"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_chicken"
+    item: FEATHER
+  backpack_coal:
+    name: "<dark_gray>Mochila Carvao"
+    itemsadder-id: "travelersbackpack:backpack_coal"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_coal"
+    item: COAL
+  backpack_cow:
+    name: "<white>Mochila Vaca"
+    itemsadder-id: "travelersbackpack:backpack_cow"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_cow"
+    item: LEATHER
+  backpack_creeper:
+    name: "<green>Mochila Creeper"
+    itemsadder-id: "travelersbackpack:backpack_creeper"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_creeper"
+    item: GUNPOWDER
+  backpack_diamond:
+    name: "<aqua>Mochila Diamante"
+    itemsadder-id: "travelersbackpack:backpack_diamond"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_diamond"
+    item: DIAMOND
+  backpack_dragon:
+    name: "<dark_purple>Mochila Dragao"
+    itemsadder-id: "travelersbackpack:backpack_dragon"
+    price: 120000.0
+    permission: "alkabackpack.skin.backpack_dragon"
+    item: DRAGON_EGG
+  backpack_emerald:
+    name: "<green>Mochila Esmeralda"
+    itemsadder-id: "travelersbackpack:backpack_emerald"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_emerald"
+    item: EMERALD
+  backpack_end:
+    name: "<light_purple>Mochila do Fim"
+    itemsadder-id: "travelersbackpack:backpack_end"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_end"
+    item: END_STONE
+  backpack_enderman:
+    name: "<dark_purple>Mochila Enderman"
+    itemsadder-id: "travelersbackpack:backpack_enderman"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_enderman"
+    item: ENDER_PEARL
+  backpack_fox:
+    name: "<gold>Mochila Raposa"
+    itemsadder-id: "travelersbackpack:backpack_fox"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_fox"
+    item: SWEET_BERRIES
+  backpack_ghast:
+    name: "<white>Mochila Ghast"
+    itemsadder-id: "travelersbackpack:backpack_ghast"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_ghast"
+    item: GHAST_TEAR
+  backpack_gold:
+    name: "<yellow>Mochila Ouro"
+    itemsadder-id: "travelersbackpack:backpack_gold"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_gold"
+    item: GOLD_INGOT
+  backpack_hay:
+    name: "<gold>Mochila Feno"
+    itemsadder-id: "travelersbackpack:backpack_hay"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_hay"
+    item: HAY_BLOCK
+  backpack_horse:
+    name: "<gold>Mochila Cavalo"
+    itemsadder-id: "travelersbackpack:backpack_horse"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_horse"
+    item: SADDLE
+  backpack_iron:
+    name: "<gray>Mochila Ferro"
+    itemsadder-id: "travelersbackpack:backpack_iron"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_iron"
+    item: IRON_INGOT
+  backpack_iron_golem:
+    name: "<gray>Mochila Golem de Ferro"
+    itemsadder-id: "travelersbackpack:backpack_iron_golem"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_iron_golem"
+    item: IRON_BLOCK
+  backpack_lapis:
+    name: "<blue>Mochila Lapis"
+    itemsadder-id: "travelersbackpack:backpack_lapis"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_lapis"
+    item: LAPIS_LAZULI
+  backpack_magma_cube:
+    name: "<red>Mochila Cubo de Magma"
+    itemsadder-id: "travelersbackpack:backpack_magma_cube"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_magma_cube"
+    item: MAGMA_CREAM
+  backpack_melon:
+    name: "<green>Mochila Melancia"
+    itemsadder-id: "travelersbackpack:backpack_melon"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_melon"
+    item: MELON_SLICE
+  backpack_nether:
+    name: "<red>Mochila do Nether"
+    itemsadder-id: "travelersbackpack:backpack_nether"
+    price: 20000.0
+    permission: "alkabackpack.skin.backpack_nether"
+    item: NETHERRACK
+  backpack_netherite:
+    name: "<dark_gray>Mochila Netherite"
+    itemsadder-id: "travelersbackpack:backpack_netherite"
+    price: 50000.0
+    permission: "alkabackpack.skin.backpack_netherite"
+    item: NETHERITE_INGOT
+  backpack_ocelot:
+    name: "<gold>Mochila Ocelote"
+    itemsadder-id: "travelersbackpack:backpack_ocelot"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_ocelot"
+    item: COD
+  backpack_pig:
+    name: "<light_purple>Mochila Porco"
+    itemsadder-id: "travelersbackpack:backpack_pig"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_pig"
+    item: PORKCHOP
+  backpack_pumpkin:
+    name: "<gold>Mochila Abobora"
+    itemsadder-id: "travelersbackpack:backpack_pumpkin"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_pumpkin"
+    item: PUMPKIN
+  backpack_quartz:
+    name: "<white>Mochila Quartzo"
+    itemsadder-id: "travelersbackpack:backpack_quartz"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_quartz"
+    item: QUARTZ
+  backpack_redstone:
+    name: "<red>Mochila Redstone"
+    itemsadder-id: "travelersbackpack:backpack_redstone"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_redstone"
+    item: REDSTONE
+  backpack_sandstone:
+    name: "<gold>Mochila Arenito"
+    itemsadder-id: "travelersbackpack:backpack_sandstone"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_sandstone"
+    item: SANDSTONE
+  backpack_sheep:
+    name: "<white>Mochila Ovelha"
+    itemsadder-id: "travelersbackpack:backpack_sheep"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_sheep"
+    item: WHITE_WOOL
+  backpack_skeleton:
+    name: "<gray>Mochila Esqueleto"
+    itemsadder-id: "travelersbackpack:backpack_skeleton"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_skeleton"
+    item: BONE
+  backpack_snow:
+    name: "<aqua>Mochila Neve"
+    itemsadder-id: "travelersbackpack:backpack_snow"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_snow"
+    item: SNOWBALL
+  backpack_spider:
+    name: "<dark_red>Mochila Aranha"
+    itemsadder-id: "travelersbackpack:backpack_spider"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_spider"
+    item: SPIDER_EYE
+  backpack_sponge:
+    name: "<yellow>Mochila Esponja"
+    itemsadder-id: "travelersbackpack:backpack_sponge"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_sponge"
+    item: SPONGE
+  backpack_squid:
+    name: "<blue>Mochila Lula"
+    itemsadder-id: "travelersbackpack:backpack_squid"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_squid"
+    item: INK_SAC
+  backpack_standard:
+    name: "<gold>Mochila Padrao do Viajante"
+    itemsadder-id: "travelersbackpack:backpack_standard"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_standard"
+    item: CHEST
+  backpack_villager:
+    name: "<green>Mochila Aldeao"
+    itemsadder-id: "travelersbackpack:backpack_villager"
+    price: 8000.0
+    permission: "alkabackpack.skin.backpack_villager"
+    item: VILLAGER_SPAWN_EGG
+  backpack_warden:
+    name: "<dark_aqua>Mochila Warden"
+    itemsadder-id: "travelersbackpack:backpack_warden"
+    price: 50000.0
+    permission: "alkabackpack.skin.backpack_warden"
+    item: SCULK
+  backpack_wither:
+    name: "<dark_gray>Mochila Wither"
+    itemsadder-id: "travelersbackpack:backpack_wither"
+    price: 50000.0
+    permission: "alkabackpack.skin.backpack_wither"
+    item: WITHER_SKELETON_SKULL
+  backpack_wolf:
+    name: "<gray>Mochila Lobo"
+    itemsadder-id: "travelersbackpack:backpack_wolf"
+    price: 3000.0
+    permission: "alkabackpack.skin.backpack_wolf"
+    item: WOLF_SPAWN_EGG
+
+  # ---- EC Bosses: skins portadas (models próprios), preço em alkarion ----
+  # cosmeticscore-id = chave real do cosmetico BODY_ITEM em
+  # resource-pack/CosmeticsCore/cosmetics/ec_bosses_backpacks_1.yml (nomes divergem
+  # de propósito das chaves de skin acima, que são só o id local do AlkaBackpack).
+  amethyst_dragon:
+    name: "<light_purple>Mochila Amethyst Dragon"
+    itemsadder-id: "ec_bosses_cosmetics_1:amethyst_dragon_backpack"
+    cosmeticscore-id: "ec_plushie_amethyst_dragon_backpack"
+    price: 50000.0
+    permission: "alkabackpack.skin.amethyst_dragon"
+    item: AMETHYST_SHARD
+  sea_serpent:
+    name: "<aqua>Mochila Sea Serpent"
+    itemsadder-id: "ec_bosses_cosmetics_1:sea_serpent_backpack"
+    cosmeticscore-id: "ec_plushie_sea_serpent_backpack"
+    price: 50000.0
+    permission: "alkabackpack.skin.sea_serpent"
+    item: PRISMARINE_SHARD
+  cursed_dragon:
+    name: "<dark_purple>Mochila Cursed Dragon"
+    itemsadder-id: "ec_bosses_cosmetics_1:cursed_dragon_backpack"
+    cosmeticscore-id: "ec_plushie_cursed_dragon_backpack"
+    price: 60000.0
+    permission: "alkabackpack.skin.cursed_dragon"
+    item: DRAGON_BREATH
+  azgad_shadow:
+    name: "<dark_gray>Mochila Azgad Shadow"
+    itemsadder-id: "ec_bosses_cosmetics_1:azgad_the_smouldering_shadow_backpack"
+    cosmeticscore-id: "ec_plushie_azgad_the_smouldering_shadow_backpack"
+    price: 70000.0
+    permission: "alkabackpack.skin.azgad_shadow"
+    item: WITHER_SKELETON_SKULL
+  octana_broodmother:
+    name: "<red>Mochila Octana Broodmother"
+    itemsadder-id: "ec_bosses_cosmetics_1:octana_the_broodmother_backpack"
+    cosmeticscore-id: "ec_plushie_octana_the_broodmother_backpack"
+    price: 70000.0
+    permission: "alkabackpack.skin.octana_broodmother"
+    item: SPIDER_EYE

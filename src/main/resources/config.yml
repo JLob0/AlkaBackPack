@@ -1,0 +1,192 @@
+# AlkaBackpack Configuration
+config-version: 1
+
+settings:
+  # Alternar coleta automatica ao abrir menu? (fisico)
+  auto-collect-default: true
+  # Segundos entre salvamentos automaticos do cache
+  autosave-interval: 300
+  # Segundos entre copias de seguranca (0 desativa)
+  backup-interval: 0
+  # Quantas copias de seguranca manter
+  backup-retention: 5
+  # Segundos de cooldown entre aberturas (evita spam no servidor)
+  open-cooldown: 1
+  # Capacidade dos tanques de liquido em baldes
+  liquid-capacity: 128
+  # Impede que mochilas sejam descartadas no chao (item)
+  block-drop: false
+  # Segundos entre reconciliacoes do cosmetico CosmeticsCore (corrige mochila
+  # que sumiu/foi vendida/perdida e o toggle de preferencia do jogador)
+  cosmetic-reconcile-interval: 30
+  sounds:
+    open: "BLOCK_NOTE_BLOCK_PLING"
+    place-item: "ENTITY_ITEM_PICKUP"
+    close: "CHEST_CLOSE"
+    denied: "ENTITY_VILLAGER_NO"
+    upgrade: "BLOCK_NOTE_BLOCK_PLING"
+    sort: "BLOCK_ANVIL_USE"
+
+# Mundos onde nao se pode abrir nem usar mochilas
+disabled-worlds:
+  - "mundo_criativo"
+
+# Regioes (WorldGuard) onde nao se pode abrir nem usar mochilas
+disabled-regions:
+  - "spawn_pvp"
+
+# Itens que nao podem ser colocados em nenhuma mochila
+blacklist:
+  enabled: true
+  items:
+    - "DIAMOND_SWORD"
+    - "DIAMOND_AXE"
+    - "NETHERITE_SWORD"
+    - "NETHERITE_AXE"
+    - "ALKA_BACKPACK"
+
+# Definição dos 9 tiers. Cada tier: nome de exibicao, cor do texto, slots usados,
+# capacidade total, paginas iniciais e maximas, permissao de uso e textura.
+# "editavel": se false, o conteudo nao pode ser renomeado/reorganizado manualmente.
+# "recursos": ativa/desativa features por tier.
+tiers:
+  1:
+    key: "comum"
+    nome: "Mochila do Aprendiz"
+    nome-tier: "Comum"
+    cor: "<light_purple>"
+    slots: 9
+    capacidade: 27
+    paginas-iniciais: 1
+    paginas-max: 3
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjliMThiMDI0NTNkYjFiYTI1NjRjMWY5Yzk2N2ZkYWE0ZjNmOGY5NWQ2OTcyNjVkNGJkZTY2MjBkNjhkZWVhYiJ9fX0="
+    editavel: true
+    recursos:
+      minerar: false
+      converter-lingote: false
+  2:
+    key: "incomum"
+    nome: "Mochila do Aventureiro"
+    nome-tier: "Incomum"
+    cor: "<dark_purple>"
+    slots: 15
+    capacidade: 27
+    paginas-iniciais: 1
+    paginas-max: 3
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmI4MGE4NzFlOTkzOWViMWRlM2I0MGM5YzFmMDVjY2NhODlkYzk2NTQ3YzZlNjZjNjVhNTFiYWU3YTM1NWY4OSJ9fX0="
+    editavel: true
+    recursos:
+      minerar: false
+      converter-lingote: false
+  3:
+    key: "raro"
+    nome: "Mochila do Explorador"
+    nome-tier: "Raro"
+    cor: "<dark_blue>"
+    slots: 21
+    capacidade: 27
+    paginas-iniciais: 1
+    paginas-max: 4
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGJmOTI4N2E0YWFhMDA2MjhmMmQ0Yjc5ZTcwZDk4MWRlODEyMjg5NzU5ZTlkOTA3MzM0YjYxNWVhMTQ2YmFkOCJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: false
+  4:
+    key: "heroico"
+    nome: "Mochila do Viajante"
+    nome-tier: "Heroico"
+    cor: "<red>"
+    slots: 27
+    capacidade: 27
+    paginas-iniciais: 1
+    paginas-max: 5
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUyY2IzOTk1M2FlZjBiZTZkN2MyNGQzNTFlNzIwMzQ5MzdlOGEzZGEwZWU1NGIxZTA1MzU4NTNmYzFkZjRjNiJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: true
+  5:
+    key: "magistral"
+    nome: "Mochila do Colecionador"
+    nome-tier: "Magistral"
+    cor: "<blue>"
+    slots: 36
+    capacidade: 36
+    paginas-iniciais: 1
+    paginas-max: 6
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ1OWY0ZGRiYjJhMDk0YzFkYTc2NTRjMWViZjlkODUxNWEyYjc1YTIyMGZkNzNhNjUxMzUwNzJlMzhkNGY2MCJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: true
+  6:
+    key: "mistico"
+    nome: "Mochila do Mercador"
+    nome-tier: "Mistico"
+    cor: "<aqua>"
+    slots: 45
+    capacidade: 45
+    paginas-iniciais: 2
+    paginas-max: 8
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTUwNjBlZjU3ZmY0Y2UwYTg1NDgyZWQwNDU0YzdmZTAzOGFhNDU1ZDNjMjY3NTM0ZTI5ZWRjODE0MWM1YjVjZSJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: true
+  7:
+    key: "lendario"
+    nome: "Mochila do Guardiao"
+    nome-tier: "Lendario"
+    cor: "<green>"
+    slots: 42
+    capacidade: 54
+    paginas-iniciais: 2
+    paginas-max: 10
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzcwNzRkZjZjZTUzODM4ZmM0MDBiZjk1MWI5OWM1ZWEzOWRkYjBhZGU0MWYwODllYzFjMDJmYjI2ZTRlNTU3MiJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: true
+  8:
+    key: "mitico"
+    nome: "Mochila Lendaria"
+    nome-tier: "Mitico"
+    cor: "<gold>"
+    slots: 48
+    capacidade: 54
+    paginas-iniciais: 3
+    paginas-max: 12
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWZjZmRlMzgwZDhhNDcyMTc3ZDM2ZDUwZDRiNDc1MDRkMTQ4NWYwMDBjYjQ1YjgzYzRkYTY2ZTY2MTk2OTVlMSJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: true
+  9:
+    key: "divino"
+    nome: "Mochila Divine Alka"
+    nome-tier: "Divino"
+    cor: "<white>"
+    slots: 54
+    capacidade: 54
+    paginas-iniciais: 3
+    paginas-max: 16
+    permissao: "alkabackpack.use"
+    textura: "eyJ0ZXh0dXJlcyI6IHsiU0tJTiI6IHsidXJsIjogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjc2NjUxMjBjNDlhMTA2Y2FhYmVlZGE4YzBlMDUzM2E5MWZjYjdlYTgxY2VmNWE2ZjUzY2M2Y2UwOGFkM2JjYSJ9fX0="
+    editavel: true
+    recursos:
+      minerar: true
+      converter-lingote: true
+
+# Precos de upgrade/pagina por tier (via AlkaEconomy, moeda de economias.yml)
+precos:
+  pagina: 2500
+  tier: 50000

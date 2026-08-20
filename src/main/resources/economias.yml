@@ -1,0 +1,17 @@
+# Moeda usada para comprar paginas/upgrades (id do AlkaEconomy)
+currency-id: "alkarion"
+
+# Precos por tier (0 desabilita a compra de upgrade)
+upgrade-prices:
+  1: 0
+  2: 10000
+  3: 25000
+  4: 50000
+  5: 100000
+  6: 250000
+  7: 500000
+  8: 1000000
+  9: 0
+
+# Preco por pagina extra
+page-price: 2500
