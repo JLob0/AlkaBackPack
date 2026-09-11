@@ -17,6 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -72,7 +73,52 @@ public class BackpackInventoryListener implements Listener {
             player.sendMessage(messages.get("item-not-allowed"));
             return;
         }
+        if (carried != null && event.isShiftClick()) {
+            // O shift-click padrao do Bukkit varre TODO o inventario de cima, inclusive
+            // a fileira de controle (paginas/gerenciar/upgrade/senha) - um item podia
+            // cair num slot de botao e sumir pra sempre (syncPage so le a area de
+            // storage). Move manualmente so dentro da area de storage.
+            shiftIntoStorage(event, carried, storageEnd);
+            return;
+        }
         event.setCancelled(false);
+    }
+
+    /** Distribui `carried` nos slots de storage (0..storageEnd-1) do inventario de cima:
+     * primeiro tenta empilhar em pilhas compativeis, depois usa slots vazios. Sobra (mochila
+     * cheia) fica no slot de origem, igual o comportamento vanilla de shift-click normal. */
+    private void shiftIntoStorage(InventoryClickEvent event, ItemStack carried, int storageEnd) {
+        Inventory top = event.getInventory();
+        int remaining = carried.getAmount();
+        for (int i = 0; i < storageEnd && remaining > 0; i++) {
+            ItemStack slotItem = top.getItem(i);
+            if (slotItem != null && !slotItem.getType().isAir() && slotItem.isSimilar(carried)) {
+                int space = slotItem.getMaxStackSize() - slotItem.getAmount();
+                if (space > 0) {
+                    int move = Math.min(space, remaining);
+                    slotItem.setAmount(slotItem.getAmount() + move);
+                    remaining -= move;
+                }
+            }
+        }
+        for (int i = 0; i < storageEnd && remaining > 0; i++) {
+            ItemStack slotItem = top.getItem(i);
+            if (slotItem == null || slotItem.getType().isAir()) {
+                int move = Math.min(carried.getMaxStackSize(), remaining);
+                ItemStack toPlace = carried.clone();
+                toPlace.setAmount(move);
+                top.setItem(i, toPlace);
+                remaining -= move;
+            }
+        }
+        event.setCurrentItem(remaining <= 0 ? null : withAmount(carried, remaining));
+        event.setCancelled(true);
+    }
+
+    private ItemStack withAmount(ItemStack base, int amount) {
+        ItemStack copy = base.clone();
+        copy.setAmount(amount);
+        return copy;
     }
 
     @EventHandler
