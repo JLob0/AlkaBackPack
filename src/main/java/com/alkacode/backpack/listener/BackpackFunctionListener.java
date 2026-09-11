@@ -5,6 +5,8 @@ import com.alkacode.backpack.gui.BackpackLayout;
 import com.alkacode.backpack.model.Backpack;
 import com.alkacode.backpack.service.BackpackService;
 import com.alkacode.backpack.util.Messages;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -95,13 +97,36 @@ public class BackpackFunctionListener implements Listener {
             }
         }
         if (captured) {
-            event.setDropItems(false);
+            // Cancelar de verdade (nao so setDropItems(false)) - senao o evento
+            // continua "nao tratado" pra outros plugins que reagem a
+            // BlockBreakEvent com ignoreCancelled=true (ex: BlockBreakListener do
+            // AlkaDrop, prioridade HIGHEST), que recalculava os mesmos drops do
+            // bloco ainda intacto e entregava de novo por cima - duplicava todo
+            // bloco minerado com mochila de mineracao equipada, pra qualquer
+            // jogador (alkadrop.use e collection.enabled-by-default sao true por
+            // padrao pra todo mundo, nao so VIP).
+            event.setCancelled(true);
+            int xp = event.getExpToDrop();
+            event.setExpToDrop(0);
+            if (xp > 0) {
+                player.giveExp(xp);
+            }
             if (!leftover.isEmpty()) {
                 for (ItemStack rest : leftover) {
                     block.getWorld().dropItemNaturally(block.getLocation(), rest);
                 }
             }
             player.sendMessage(messages.get("mined-to-stock"));
+
+            // applyPhysics=false + broadcast manual evita ghost block (mesmo padrao
+            // do AlkaDrop/AlkaMines - ver feedback-mineblocklistener-ghostblock).
+            Location location = block.getLocation();
+            block.setType(Material.AIR, false);
+            for (Player nearby : block.getWorld().getPlayers()) {
+                if (nearby.getLocation().distanceSquared(location) < 2500) {
+                    nearby.sendBlockChange(location, Material.AIR.createBlockData());
+                }
+            }
         }
     }
 
